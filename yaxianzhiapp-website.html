@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YaXianZhi App - Play Monster Survivors Game Online Free</title>
+    <meta name="description" content="Play YaXianZhi App Monster Survivors game online for free. Experience thrilling monster battles, strategic gameplay, and endless survival challenges in your browser.">
+    <meta name="keywords" content="yaxianzhiapp, monster survivors, online game, survival game, browser game, free game">
+    <meta name="author" content="YaXianZhi App">
+    <link rel="canonical" href="https://yaxianzhiapp.com/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="YaXianZhi App - Play Monster Survivors Game Online Free">
+    <meta property="og:description" content="Experience thrilling monster battles and strategic gameplay in YaXianZhi App's Monster Survivors game.">
+    <meta property="og:url" content="https://yaxianzhiapp.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="YaXianZhi App">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YaXianZhi App - Monster Survivors Game">
+    <meta name="twitter:description" content="Play Monster Survivors online for free. Strategic survival gameplay awaits!">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #007aff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #1d1d1f;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #007aff;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .play-button {
+            display: inline-block;
+            background: #ff3b30;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 59, 48, 0.4);
+        }
+        
+        .play-button:hover {
+            background: #e53e3e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 59, 48, 0.6);
+        }
+        
+        .game-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            overflow: hidden;
+        }
+        
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+        }
+        
+        .game-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        
+        .content-section {
+            padding: 40px;
+        }
+        
+        h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1d1d1f;
+        }
+        
+        .feature-description {
+            color: #6e6e73;
+            line-height: 1.5;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #007aff;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #6e6e73;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        .description-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #424245;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background: #1d1d1f;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #a1a1a6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 20px;
+            }
+            
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .content-section {
+                padding: 30px 20px;
+            }
+            
+            .game-container {
+                height: 400px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .game-container {
+                height: 300px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: #007aff;
+            font-size: 18px;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Focus styles for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid #007aff;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">YaXianZhi App</a>
+                <nav>
+                    <ul>
+                        <li><a href="#game">Play Game</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>YaXianZhi App Monster Survivors</h1>
+            <p class="hero-subtitle">Experience the ultimate survival challenge with strategic monster battles and endless gameplay excitement.</p>
+            <a href="#game" class="play-button">Play Now - Free</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="game" class="game-section">
+            <div class="game-container">
+                <iframe 
+                    src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+                    class="game-iframe"
+                    title="YaXianZhi App Monster Survivors Game"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="content-section">
+                <h2>Start Your Survival Journey</h2>
+                <p class="description-text">
+                    Jump straight into the action with YaXianZhi App's Monster Survivors game. No downloads required - play instantly in your browser with full-screen support and optimized performance across all devices.
+                </p>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Game Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚔️</div>
+                    <div class="feature-title">Strategic Combat</div>
+                    <div class="feature-description">
+                        Master tactical battles against waves of monsters using strategic positioning, timing, and resource management to survive increasingly challenging encounters.
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <div class="feature-title">Endless Gameplay</div>
+                    <div class="feature-description">
+                        Experience unlimited replayability with procedurally generated levels, random monster encounters, and multiple difficulty modes that keep every session fresh and exciting.
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">Cross-Platform Play</div>
+                    <div class="feature-description">
+                        Enjoy seamless gameplay across desktop, tablet, and mobile devices with responsive touch controls and optimized performance for any screen size.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About Monster Survivors</h2>
+            <p class="description-text">
+                YaXianZhi App's Monster Survivors represents the pinnacle of browser-based survival gaming. Combining fast-paced action with deep strategic elements, this game challenges players to survive against overwhelming odds while making split-second decisions that determine their fate.
+            </p>
+            <p class="description-text">
+                Built with cutting-edge web technology, Monster Survivors delivers console-quality graphics and smooth 60fps gameplay directly in your browser. The game features an intuitive control scheme that's easy to learn but difficult to master, making it accessible to newcomers while providing depth for experienced gamers.
+            </p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <div class="stat-label">Monster Types</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <div class="stat-label">Unique Levels</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <div class="stat-label">Available Online</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Free</span>
+                    <div class="stat-label">Always Free</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>How to Play</h2>
+            <p class="description-text">
+                Getting started with YaXianZhi App's Monster Survivors is simple. Use your mouse or touch controls to navigate your character through hordes of monsters. Collect power-ups, upgrade your abilities, and employ strategic thinking to survive as long as possible. The game automatically saves your progress, allowing you to continue your survival journey anytime.
+            </p>
+            <p class="description-text">
+                Master the art of positioning and timing to maximize your survival chances. Each monster type has unique behaviors and weaknesses - learn to exploit them while managing your resources carefully. The longer you survive, the more challenging and rewarding the game becomes.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#support">Support</a>
+            </div>
+            <p>&copy; 2025 YaXianZhi App. All rights reserved. Play Monster Survivors and other games online for free.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Loading state for iframe
+        const gameIframe = document.querySelector('.game-iframe');
+        const gameContainer = document.querySelector('.game-container');
+        
+        gameIframe.addEventListener('load', function() {
+            console.log('YaXianZhi App Monster Survivors game loaded successfully');
+        });
+
+        // Add error handling for iframe
+        gameIframe.addEventListener('error', function() {
+            console.error('Failed to load YaXianZhi App game');
+            gameContainer.innerHTML = '<div class="loading">Unable to load game. Please refresh the page.</div>';
+        });
+
+        // Performance optimization - lazy loading
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.feature-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+    </script>
+</body>
+</html>
